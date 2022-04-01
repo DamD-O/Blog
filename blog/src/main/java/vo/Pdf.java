@@ -1,0 +1,56 @@
+package vo;
+
+public class Pdf {
+	public Pdf() {}
+	private int pdfNo;
+	private String pdfName;
+	private String pdfOriginalName;
+	private String pdfType;
+	private String pdfPw;
+	private String writer;
+	private String createDate;
+	
+	public int getPdfNo() {
+		return pdfNo;
+	}
+	public void setPdfNo(int pdfNo) {
+		this.pdfNo = pdfNo;
+	}
+	public String getPdfName() {
+		return pdfName;
+	}
+	public void setPdfName(String pdfName) {
+		this.pdfName = pdfName;
+	}
+	public String getPdfOriginalName() {
+		return pdfOriginalName;
+	}
+	public void setPdfOriginalName(String pdfOriginalName) {
+		this.pdfOriginalName = pdfOriginalName;
+	}
+	public String getPdfType() {
+		return pdfType;
+	}
+	public void setPdfType(String pdfType) {
+		this.pdfType = pdfType;
+	}
+	public String getPdfPw() {
+		return pdfPw;
+	}
+	public void setPdfPw(String pdfPw) {
+		this.pdfPw = pdfPw;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}	
+	
+}
