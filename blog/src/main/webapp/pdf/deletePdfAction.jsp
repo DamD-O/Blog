@@ -22,6 +22,6 @@
 		response.sendRedirect(request.getContextPath()+"/pdf/pdfList.jsp"); //리스트로 이동
 	}else{
 		System.out.println("사진 삭제실패");
-		response.sendRedirect(request.getContextPath()+"/photo/deletePdfFOrm.jsp"); //삭제폼으로 이동
+		response.sendRedirect(request.getContextPath()+"/photo/deletePdfForm.jsp"); //삭제폼으로 이동
 	}
 %>
