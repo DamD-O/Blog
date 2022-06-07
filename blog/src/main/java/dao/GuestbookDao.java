@@ -15,12 +15,9 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		
 		//db접속
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		//쿼리문 저장
 		String sql ="INSERT INTO guestbook(guestbook_content, writer, guestbook_pw, create_date, update_date) VALUES(?,?,?,NOW(),NOW())";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
 		stmt = conn.prepareStatement(sql);//쿼리문 실행 저장
 		//?에 값 저장
 		stmt.setString(1, guestbook.getGuestbookContent());
@@ -45,10 +42,7 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs =null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		
 		String sql="SELECT guestbook_no guestbookNo, guestbook_content guestbookContent FROM guestbook WHERE guestbook_no = ?";
 		stmt= conn.prepareStatement(sql);
@@ -76,10 +70,7 @@ public class GuestbookDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		
 		String sql="UPDATE guestbook SET guestbook_content =? WHERE guestbook_no=? AND guestbook_pw";
 		stmt= conn.prepareStatement(sql);
@@ -110,10 +101,7 @@ public class GuestbookDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		
 		String sql="DELETE FROM guestbook WHERE guestbook_no =? AND guestbook_pw=?";
 		stmt= conn.prepareStatement(sql);
@@ -136,12 +124,9 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		
 		String sql ="SELECT COUNT(*) cnt FROM guestbook";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
 		stmt = conn.prepareStatement(sql);
 		rs = stmt.executeQuery();
 		if(rs.next()) {
@@ -163,12 +148,9 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		
 		String sql = "SELECT guestbook_no guestbookNo, guestbook_content guestbookContent, writer,guestbook_pw guestbookPw, create_date createDate FROM guestbook ORDER BY create_date DESC LIMIT ?, ?";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
 		stmt = conn.prepareStatement(sql);
 		stmt.setInt(1, beginRow);
 		stmt.setInt(2, rowPerPage);

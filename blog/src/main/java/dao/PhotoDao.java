@@ -10,11 +10,9 @@ public class PhotoDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		String sql="INSERT INTO photo(photo_name,photo_original_name, photo_type,photo_pw,writer,create_date, update_date) VALUES(?,?,?,?,?,NOW(),NOW())";
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		
 		stmt = conn.prepareStatement(sql);
 		stmt.setString(1, photo.getPhotoName());
 		stmt.setString(2, photo.getPhotoOriginalName());
@@ -41,10 +39,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		
 		//db접속
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		System.out.println("conn 접속 성공"+conn);
 		
 		//쿼리문 저장
@@ -71,10 +66,7 @@ public class PhotoDao {
 			PreparedStatement stmt = null;
 			ResultSet rs = null;
 			
-			String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-			String dbuser = "root"; //db계정
-			String dbpw = "java1234"; //비밀번호
-			conn = DriverManager.getConnection(dburl, dbuser, dbpw); 	
+			conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 			System.out.println("conn 접속 성공"+conn);
 			//쿼리문 저장 및 실행
 			String sql="SELECT COUNT(*) cnt FROM photo";
@@ -100,10 +92,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 	
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		System.out.println("conn 접속 성공"+conn);
 		
 		//쿼리문 저장
@@ -138,10 +127,7 @@ public class PhotoDao {
 		ResultSet rs =null;
 		
 		//db접속
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		System.out.println("conn 접속 성공"+conn);
 		
 		//쿼리문 저장
@@ -178,10 +164,7 @@ public class PhotoDao {
 		ResultSet rs =null;
 		
 		//db접속
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; //db주소
-		String dbuser = "root"; //db계정
-		String dbpw = "java1234"; //비밀번호
-		conn = DriverManager.getConnection(dburl, dbuser, dbpw); 
+		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
 		System.out.println("conn 접속 성공"+conn);
 		String PhotoName = "SELECT photo_name WHERE photo_no=?";
 		stmt= conn.prepareStatement(PhotoName);
