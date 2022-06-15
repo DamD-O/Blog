@@ -297,9 +297,5 @@ public class BoardDao {
 		return row;
 		
 	}
-	
-	
-	
-	
-	
+
 }

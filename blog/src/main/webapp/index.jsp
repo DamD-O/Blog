@@ -4,47 +4,48 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container p-3 my-3 border border-dark">
-	<h1 class="font-weight-bold text-center" style="padding: 10px">HOME</h1>
-	<div class="card-deck"  >
-		<div class="card" >
-			<img class="card-img-top" src="<%=request.getContextPath()%>/img/board.png" alt="Card image">
-			<div class="card-body">
-			<h4 class="card-title">취미 목록 게시판</h4>
-			<p class="card-text">hobbies list</p>
-			<a href="<%=request.getContextPath()%>/board/boardList.jsp" class="btn btn-outline-secondary">게시판</a>
-			</div>
-		</div>
-		<div class="card">
-			<img class="card-img-top" src="<%=request.getContextPath()%>/img/photo.png" alt="Card image">
-			<div class="card-body">
-			<h4 class="card-title">사진 목록</h4>
-			<p class="card-text">photo list</p>
-			<a href="<%=request.getContextPath()%>/photo/photoList.jsp" class="btn btn-outline-secondary">사진첩</a>
-			</div>
-		</div>
-		<div class="card">
-			<img class="card-img-top" src="<%=request.getContextPath()%>/img/guestbook.png" alt="Card image">
-			<div class="card-body">
-			<h4 class="card-title">방명록 목록</h4>
-			<p class="card-text">guest book list</p>
-			<a href="<%=request.getContextPath()%>/guestbook/guestbookList.jsp" class="btn btn-outline-secondary">방명록</a>
-			</div>
-		</div>
-		<div class="card">
-			<img class="card-img-top" src="<%=request.getContextPath()%>/img/pdf.png" alt="Card image">
-			<div class="card-body">
-			<h4 class="card-title">PDF 업로드</h4>
-			<p class="card-text">upload .PDF</p>
-			<a href="<%=request.getContextPath()%>/pdf/pdfList.jsp" class="btn btn-outline-secondary">PDF자료실</a>
-			</div>
-		</div>
-		
+    <h2>BLOG</h2>
+    <br>
+	   <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li class="nav-item">
+	      <a class="nav-link" data-toggle="tab" href="#bordList">게시판</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" data-toggle="tab" href="#photo">사진첩</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" data-toggle="tab" href="#guestbook">방명록</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" data-toggle="tab" href="#pdf">PDF자료실</a>
+	    </li>
+	  </ul>
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div id="bordList" class="container tab-pane active"><br>
+	       <jsp:include page="/board/boardList.jsp"/>
+	    </div>
+	    <div id="photo" class="container tab-pane fade"><br>
+	      <jsp:include page="/photo/photoList.jsp" />
+	    </div>
+	    <div id="guestbook" class="container tab-pane fade"><br>
+	      <jsp:include page="/guestbook/guestbookList.jsp" />
+	    </div>
+	    <div id="pdf" class="container tab-pane fade"><br>
+          <jsp:include page="/pdf/pdfList.jsp"/>
+        </div>
+	  </div>
 	</div>
 </div>
-
 </body>
 </html>
